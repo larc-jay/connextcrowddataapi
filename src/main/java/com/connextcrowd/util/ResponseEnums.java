@@ -1,0 +1,46 @@
+package com.connextcrowd.util;
+
+public interface ResponseEnums {
+	public enum StatusCode {
+
+		ENTITY_NOT_FOUND(100),
+		USER_NOT_FOUND(101),
+
+		/* Input validation status code */
+		ILLEGAL_ARGUMENT(103),
+		INSUFFICIENT_ARGUMENT(104),
+		INVALID_CREDENTIAL(105),
+		INVALID_AUTHKEY(109),
+		ITEMS_NOT_FOUND(111),
+		EXPIRED_AUTHKEY(116),
+		ENTITIES_NOT_FOUND(118),
+		ENTITY_ALREADY_EXIST(119),
+		EMAIL_ALREADY_EXIST(122),
+		INVALID_SECTION(128),
+		DATA_NOT_FOUND(130),
+
+		/* Request processing status code */
+		REQUEST_SUCCESS(200),
+		PARTIAL_SUCCESS(206),
+		INTERNAL_SERVER_ERROR(500),
+		SERVICE_NOT_AVAIL(503),
+		RSOURCE_NOT_FOUND(404),
+		MISSING_SERVLET_REQUEST_PARAMETER(400),
+		HTTP_REQUEST_METHOD_NOT_SUPPORTED(405),
+		URL_REDIRECTION(302),
+		REQUEST_SUCCESS_PARTIAL(501),
+		INSUFFICIENT_PRIVILEGE(502),
+		INACTIVE_USER(240),
+		REQUEST_TIMEOUT(408);
+
+		int val;
+
+		private StatusCode(int val) {
+			this.val = val;
+		}
+
+		public int getVal() {
+			return val;
+		}
+	}
+}
